@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from 'Components/Header/Header';
-import ProfileList from '../components/ProfileList/ProfileList';
+import Listing from 'App/components/Listing/Listing';
 
-const Homepage = () => {
-    return (
-        <div>
-            <Header/>
-            <ProfileList/>
-        </div>
-    );
+class Homepage extends Component {
+    constructor(){
+        super();
+    }
+
+    render(){
+        return (
+            <div>
+                <Header/>
+                <Listing/>
+            </div>
+        );
+
+    }
 };
 
 export default Homepage;

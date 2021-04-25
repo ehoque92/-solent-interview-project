@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-import { Wrapper, ProfileCard, ProfileImg, ProfileName} from "./ProfileList.styled";
+import Modal from 'App/components/Modal/Modal';
+
+import { Wrapper, ProfileCard, ProfileImg, ProfileName} from "./Listing.styled";
 
 const RANDOMPEOPLE_API = "https://randomuser.me/api?results=10";
 
-class ProfileList extends Component {
+class Listing extends Component {
   constructor() {
     super();
     this.state = {
       users: [],
+      show: false
     };
-    this.alertmsg = this.alertmsg.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
@@ -21,15 +24,16 @@ class ProfileList extends Component {
     console.log(this.state.users);
   }
 
-  alertmsg(){
-      alert('test');
+  handleClick() {
+    this.setState({ show: !this.state.show });
   }
 
   render() {
     const card = this.state.users.map((p) => (
-      <ProfileCard key={uuidv4()} onClick={this.alertmsg}>
+      <ProfileCard key={uuidv4()} onClick={this.handleClick}>
         <ProfileImg src={p.picture.thumbnail} />
         <ProfileName>{p.name.first} {p.name.last}</ProfileName>
+        <Modal onClose={this.handleClick} show={this.state.show}/>
       </ProfileCard>
     ));
     return (
@@ -40,4 +44,7 @@ class ProfileList extends Component {
   }
 }
 
-export default ProfileList;
+export default Listing;
+
+
+                
