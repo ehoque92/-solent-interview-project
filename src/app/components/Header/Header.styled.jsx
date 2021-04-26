@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import background from "../../../../public/images/background.jpg";
-// https://styled-components.com/
 
 export const Wrapper = styled.div`
   background-image: url(${background});
@@ -19,6 +18,3 @@ export const Content = styled.div`
   color: white;
 `;
 
-export const Search = styled.input`
-  padding: 8px;
-`;

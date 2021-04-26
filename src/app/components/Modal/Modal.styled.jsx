@@ -31,6 +31,11 @@ export const ModalHeader = styled.div`
     padding: 10px;
 `;
 
+export const ModalThumbnail = styled.img`
+  border-radius: 50%;
+  margin-right: 20px;
+`;
+
 export const ModelFooter = styled.div`
     padding: 10px;
 `;
