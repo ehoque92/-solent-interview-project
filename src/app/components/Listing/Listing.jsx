@@ -28,10 +28,10 @@ class Listing extends Component {
       <ProfileCard key={idx} onClick={this.handleClick}>
         <ProfileImg src={p.picture.thumbnail} />
         <ProfileName>
-          {p.name.first} {p.name.last}  <i className="fas fa-arrow-circle-right"></i>
+          {p.name.first} {p.name.last} <i className="fas fa-arrow-circle-right"></i>
         </ProfileName>
         <Modal
-            key={idx} 
+            id={idx} 
             thumbnail={p.picture.thumbnail}
             fName={p.name.first}
             lName={p.name.last}
